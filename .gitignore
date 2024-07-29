@@ -1,0 +1,12 @@
+# Ignorar diretórios e arquivos temporários
+test-ledger/
+*.tar.zst
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Ignorar outros arquivos temporários
+*.log
