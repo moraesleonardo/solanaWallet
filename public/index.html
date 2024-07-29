@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Localnet Explorer</title>
+</head>
+<body>
+    <h1>Solana Localnet Explorer</h1>
+    <input type="text" id="publicKey" placeholder="Enter Public Key" />
+    <button onclick="getBalance()">Get Balance</button>
+    <button onclick="requestAirdrop()">Request Airdrop</button>
+    <p id="balance"></p>
+    <p id="airdropStatus"></p>
+
+    <script>
+        async function getBalance() {
+            const publicKey = document.getElementById('publicKey').value;
+            const response = await fetch(`/balance/${publicKey}`);
+            const data = await response.json();
+            document.getElementById('balance').textContent = `Balance: ${data.balance / 1000000000} SOL`;
+        }
+
+        async function requestAirdrop() {
+            const publicKey = document.getElementById('publicKey').value;
+            const response = await fetch(`/airdrop/${publicKey}`);
+            const data = await response.json();
+            document.getElementById('airdropStatus').textContent = data.message || data.error;
+        }
+    </script>
+</body>
+</html>
