@@ -1,14 +1,16 @@
 {
   "name": "solanawallet",
   "version": "1.0.0",
+  "description": "A simple Solana wallet project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rebuild": "npm rebuild"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["solana", "wallet", "blockchain"],
+  "author": "Seu Nome",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "@solana/web3.js": "^1.95.2"
   }
